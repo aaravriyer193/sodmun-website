@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SODMUN · Summit of Diplomacy Model United Nations</title>
+  <meta name="description" content="Summit of Diplomacy Model United Nations: the largest private teen-led MUN in the world. Made by MUNers, for MUNers. Dubai, UAE.">
+  <meta name="theme-color" content="#212529">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SODMUN · Summit of Diplomacy Model United Nations">
+  <meta property="og:description" content="The largest private teen-led MUN in the world. Made by MUNers, for MUNers.">
+  <meta property="og:image" content="assets/brand/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/brand/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..500;1,6..72,400..500&display=swap">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="preload" as="image" href="assets/brand/logo-ring.png">
+  <script>
+    try { if (sessionStorage.getItem('sodmun-loaded')) document.documentElement.classList.add('no-loader'); } catch (e) {}
+  </script>
+  <style>.no-loader .loader { display: none; }</style>
+  <script type="module" src="js/home.js"></script>
+</head>
+<body data-header="dark">
+
+  <!-- Interactive loading screen -->
+  <div class="loader" aria-label="Loading SODMUN" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+    <div class="loader__top"><span>Summit of Diplomacy</span><span>Dubai · UAE</span></div>
+    <div class="loader__hint">Drag to spin the summit</div>
+    <div class="loader__stage">
+      <div class="loader__tilt">
+        <div class="loader__ring-ghost"></div>
+        <div class="loader__ring-wrap"><div class="loader__spin"><div class="loader__ring"></div></div></div>
+        <div class="loader__globe"></div>
+      </div>
+    </div>
+    <div class="loader__meta">
+      <div class="loader__title">Summit of Diplomacy<br><em>Model United Nations</em></div>
+      <div class="loader__count" aria-hidden="true">000</div>
+    </div>
+    <button class="loader__skip sr-only">Skip intro</button>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero dark" aria-labelledby="hero-title">
+      <div class="hero__media" aria-hidden="true"><img src="assets/photos/committee-room.jpg" alt="" fetchpriority="high"></div>
+
+      <div class="wrap hero__content">
+        <div class="hero__kicker">
+          <span class="label" data-reveal>Model United Nations · Edition V</span>
+        </div>
+        <h1 class="hero__title" id="hero-title" data-split>Summit of<br><em>Diplomacy</em></h1>
+        <div class="hero__foot">
+          <p data-reveal style="--d:.3s">The largest private teen-led conference in the world. Three days of debate, negotiation and policymaking in Dubai.</p>
+          <dl class="hero__facts" data-reveal style="--d:.4s">
+            <div><dt>Edition</dt><dd>SODMUN V</dd></div>
+            <div><dt>City</dt><dd>Dubai, UAE</dd></div>
+            <div><dt>Dates</dt><dd>To be announced</dd></div>
+          </dl>
+          <div class="btn-row" data-reveal style="--d:.5s">
+            <a class="btn" href="applications.html">Apply now <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+            <a class="btn btn--ghost" href="committees.html">Committees</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============ LARGEST PRIVATE (globe) ============ -->
+    <section class="section" aria-labelledby="scale-title">
+      <div class="wrap">
+        <div class="head">
+          <div class="head__label"><span class="label">Scale</span></div>
+          <h2 class="h2 head__title balance" id="scale-title" data-split>The largest private<br>teen-led MUN <em>in the world.</em></h2>
+        </div>
+        <div class="scale">
+          <div class="scale__stats" id="stats"></div>
+          <div class="globe" data-reveal>
+            <canvas id="globe" width="1280" height="1280" aria-label="Interactive globe centred on Dubai"></canvas>
+            <div class="globe__legend">
+              <span><i></i>Dubai, home of SODMUN</span>
+              <span><i class="hollow"></i>India, our solar-power project</span>
+            </div>
+            <div class="globe__hint">Drag to rotate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENTO ============ -->
+    <section class="section" style="padding-top:0" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="head">
+          <div class="head__label"><span class="label">Why SODMUN</span></div>
+          <h2 class="h2 head__title balance" id="why-title" data-split>Probably the best MUN<br><em>you will ever attend.</em></h2>
+        </div>
+        <div class="bento">
+          <article class="tile tile--dark b-a" data-reveal>
+            <span class="tile__num">I.</span>
+            <div>
+              <h3>By MUNers,<br><em>for MUNers.</em></h3>
+              <p class="mt-s">A premier Model United Nations conference designed by the people who live and breathe it. A real-world simulation of international diplomacy and global governance, built around what delegates actually want.</p>
+            </div>
+          </article>
+          <figure class="tile tile--img b-b" data-reveal style="--d:.08s">
+            <img src="assets/photos/podium.jpg" alt="Delegates speaking at the podium during a SODMUN session" loading="lazy">
+            <figcaption><span>At the podium</span><span>SODMUN IV</span></figcaption>
+          </figure>
+          <article class="tile b-c" data-reveal style="--d:.12s">
+            <span class="tile__num">II.</span>
+            <div>
+              <div class="tile__big">700+</div>
+              <p class="mt-s">MENA’s teen diplomats in high-level debate, negotiation and policymaking.</p>
+            </div>
+          </article>
+          <article class="tile b-d" data-reveal style="--d:.16s">
+            <span class="tile__num">III.</span>
+            <div>
+              <h3>Global <em>impact.</em></h3>
+              <p class="mt-s">After our last conference the team raised over 50,000 AED to bring solar-powered electricity to schools in rural India. A rare undertaking for an MUN, and a reminder that debate can end in action.</p>
+            </div>
+          </article>
+          <figure class="tile tile--img b-e" data-reveal style="--d:.08s">
+            <img src="assets/photos/award.jpg" alt="Delegates receiving an Honourable Mention award" loading="lazy">
+            <figcaption><span>Honourable Mention</span><span>Awards</span></figcaption>
+          </figure>
+          <article class="tile b-f" data-reveal style="--d:.12s">
+            <span class="tile__num">IV.</span>
+            <div>
+              <h3>Growth beyond <em>debate.</em></h3>
+              <p class="mt-s">Sharpen diplomatic skills, find confidence in public speaking, and meet the people you’ll be building the future with.</p>
+            </div>
+          </article>
+          <figure class="tile tile--img b-g" data-reveal style="--d:.16s">
+            <img src="assets/photos/laptops.jpg" alt="Delegates drafting resolutions together on laptops" loading="lazy">
+            <figcaption><span>Drafting</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLATFORM ============ -->
+    <section class="section dark" aria-labelledby="platform-title">
+      <div class="wrap">
+        <div class="head">
+          <div class="head__label"><span class="label">Platform</span></div>
+          <h2 class="h2 head__title balance" id="platform-title" data-split>Entering <em>a new era.</em></h2>
+          <p class="lede head__aside" data-reveal>Since SODMUN IV, every committee has run on its own platform. Chairs and delegates manage POIs without paper and keep committee organised from the first speech to the final vote.</p>
+        </div>
+        <div class="platform">
+          <div>
+            <ul class="features" id="features">
+              <li class="feature is-active" data-shot="comms">
+                <button aria-expanded="true"><span class="feature__n">01</span><span class="feature__t">Delegate chat</span><span class="feature__plus"></span></button>
+                <div class="feature__body"><div><p>Direct messages between delegates and a clean line to the chairs, so no note gets lost across the room.</p></div></div>
+              </li>
+              <li class="feature" data-shot="dashboard">
+                <button aria-expanded="false"><span class="feature__n">02</span><span class="feature__t">Bloc POIs, paperless</span><span class="feature__plus"></span></button>
+                <div class="feature__body"><div><p>Blocs get a group chat and send Points of Information as messages. Chairs see and manage every POI in one place.</p></div></div>
+              </li>
+              <li class="feature" data-shot="ai">
+                <button aria-expanded="false"><span class="feature__n">03</span><span class="feature__t">Soddy, the AI assistant</span><span class="feature__plus"></span></button>
+                <div class="feature__body"><div><p>A built-in assistant for procedure questions, research pointers and quick clarity mid-session.</p></div></div>
+              </li>
+              <li class="feature" data-shot="timer">
+                <button aria-expanded="false"><span class="feature__n">04</span><span class="feature__t">Speaking-list timer</span><span class="feature__plus"></span></button>
+                <div class="feature__body"><div><p>A shared timer for speeches and caucuses that everyone in committee can see.</p></div></div>
+              </li>
+              <li class="feature" data-shot="resolution">
+                <button aria-expanded="false"><span class="feature__n">05</span><span class="feature__t">Resolutions & documents</span><span class="feature__plus"></span></button>
+                <div class="feature__body"><div><p>Draft, share and review working papers and resolutions without printing a page.</p></div></div>
+              </li>
+            </ul>
+            <div class="btn-row platform__cta">
+              <button class="btn" id="tutorial">Watch tutorial <svg class="arrow" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></button>
+              <a class="btn btn--ghost" href="https://app.sodmun.com" target="_blank" rel="noopener">Enter platform <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M5 4h7v7" stroke="currentColor" stroke-width="1.2"/></svg></a>
+            </div>
+          </div>
+          <div class="screen" data-reveal>
+            <div class="screen__bar"><i></i><i></i><i></i><span>app.sodmun.com</span></div>
+            <div class="screen__view" id="screens">
+              <img class="is-active" data-shot="comms" src="assets/platform/comms.jpg" alt="Platform communications view with committee chat" loading="lazy">
+              <img data-shot="dashboard" src="assets/platform/dashboard.jpg" alt="Chair dashboard showing POIs and delegate lists" loading="lazy">
+              <img data-shot="ai" src="assets/platform/ai.jpg" alt="Soddy AI assistant chat view" loading="lazy">
+              <img data-shot="timer" src="assets/platform/timer.jpg" alt="Speaking list timer" loading="lazy">
+              <img data-shot="resolution" src="assets/platform/resolution.jpg" alt="Resolution document editor" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION ============ -->
+    <section class="section" aria-labelledby="loc-title">
+      <div class="wrap">
+        <div class="location">
+          <div>
+            <span class="label">Where</span>
+            <h2 class="location__big mt-m" id="loc-title" data-split>Dubai,<br><em>UAE.</em></h2>
+            <dl class="location__list" data-reveal>
+              <div><dt>Edition</dt><dd>SODMUN V</dd></div>
+              <div><dt>Venue</dt><dd>To be announced</dd></div>
+              <div><dt>Dates</dt><dd>To be announced</dd></div>
+              <div><dt>Local time</dt><dd id="dxb-time">—</dd></div>
+            </dl>
+            <p class="muted small mt-m" data-reveal>Venue and dates are announced first on <a class="link" href="https://instagram.com/sod.mun" target="_blank" rel="noopener">@sod.mun</a>.</p>
+          </div>
+          <div class="map" data-reveal style="--d:.1s">
+            <iframe title="Map of Dubai" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Dubai%2C%20United%20Arab%20Emirates&z=11&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ASK AI ============ -->
+    <section class="section dark" aria-labelledby="ask-title">
+      <div class="wrap">
+        <div class="ask">
+          <span class="label">Ask AI</span>
+          <h2 class="h2 mt-m balance" id="ask-title" data-split>Not sure about SODMUN?<br><em>Ask your favourite AI.</em></h2>
+          <div class="ask__box" data-reveal>
+            <div class="ask__field">
+              <i class="mark" aria-hidden="true"></i>
+              <label for="ask-q" class="sr-only">Your question</label>
+              <textarea id="ask-q" rows="2">Tell me why Summit of Diplomacy MUN (sodmun.com) is a great MUN for me.</textarea>
+            </div>
+            <div class="ask__row">
+              <div class="ask__chips">
+                <button class="chip" data-q="Tell me why Summit of Diplomacy MUN (sodmun.com) is a great MUN for me.">Why SODMUN?</button>
+                <button class="chip" data-q="I've never done Model UN. Is Summit of Diplomacy MUN (sodmun.com) a good first conference for me?">First MUN?</button>
+                <button class="chip" data-q="Which committee at Summit of Diplomacy MUN (sodmun.com/committees) would suit me? Ask me a few questions first.">Pick my committee</button>
+              </div>
+              <div class="ask__ais" id="ais"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" aria-labelledby="quotes-title">
+      <div class="wrap">
+        <div class="head">
+          <div class="head__label"><span class="label">Delegates</span></div>
+          <h2 class="h2 head__title" id="quotes-title" data-split>In their <em>words.</em></h2>
+        </div>
+        <div class="quotes" id="quotes"></div>
+        <div class="photo-strip mt-l">
+          <figure data-img-reveal><img src="assets/photos/atrium.jpg" alt="Delegates gathering in the atrium between sessions" loading="lazy"></figure>
+          <figure data-img-reveal style="--d:.1s"><img src="assets/photos/speaker.jpg" alt="A delegate addressing committee from the podium" loading="lazy"></figure>
+          <figure data-img-reveal style="--d:.2s"><img src="assets/photos/atrium-2.jpg" alt="Delegates queueing at registration" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section dark cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <span class="label">Get started</span>
+        <h2 class="cta__title mt-m" id="cta-title" data-split>See you at<br><em>SODMUN.</em></h2>
+        <div class="btn-row" data-reveal>
+          <a class="btn" href="applications.html">Apply for SODMUN V <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M1 8h13M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+          <a class="btn btn--ghost" href="contact.html">Contact us</a>
+        </div>
+        <nav class="cta__links" data-reveal aria-label="Explore">
+          <a href="committees.html">View committees <small>25</small></a>
+          <a href="secretariat.html">Meet the Secretariat <small>35</small></a>
+          <a href="about.html">Our story <small>I–V</small></a>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
