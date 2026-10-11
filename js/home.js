@@ -84,14 +84,14 @@ function initGlobe() {
     baseColor: [0.965, 0.978, 0.968],
     markerColor: [0.31, 0.48, 0.39],
     glowColor: [0.94, 0.95, 0.945],
-    arcColor: [0.42, 0.37, 0.55],
+    arcColor: [0.18, 0.32, 0.26],
     arcWidth: 0.6,
     arcHeight: 0.28,
     markerElevation: 0.01,
     opacity: 0.92,
     markers: [
       { location: DUBAI, size: 0.07 },
-      { location: INDIA, size: 0.035, color: [0.42, 0.37, 0.55] },
+      { location: INDIA, size: 0.035, color: [0.18, 0.32, 0.26] },
     ],
     arcs: [{ from: DUBAI, to: INDIA }],
   });

@@ -6,7 +6,7 @@ F=os.path.dirname(os.path.abspath(__file__))+'/fonts/'
 reg=lambda s: ImageFont.truetype(F+'Newsreader-Regular.ttf', s)
 ital=lambda s: ImageFont.truetype(F+'Newsreader-Italic.ttf', s)
 med=lambda s: ImageFont.truetype(F+'Newsreader-Medium.ttf', s)
-INK=(35,31,44); PAPER=(248,249,250); GREENS=(143,174,157); PURPS=(167,155,192); STONE=(173,181,189)
+INK=(24,33,28); PAPER=(248,249,250); GREENS=(143,174,157); PURPS=(163,195,176); STONE=(173,181,189)
 logoA=Image.open(S+'assets/brand/logo.png').getchannel('A')
 
 def card(name, line1, line2, kicker, photo=None, tint='purple'):
@@ -18,7 +18,7 @@ def card(name, line1, line2, kicker, photo=None, tint='purple'):
         ph=ph.crop((0,0,W,H))
         im=Image.blend(im, ph, 0.22)
     # tint wash
-    wash=Image.new('RGB',(W,H),(60,48,86) if tint=='purple' else (34,58,46))
+    wash=Image.new('RGB',(W,H),(34,58,46) if tint=='purple' else (26,48,38))
     im=Image.blend(im, wash, 0.14)
     d=ImageDraw.Draw(im)
     # logo

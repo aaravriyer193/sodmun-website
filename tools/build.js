@@ -206,7 +206,7 @@ function head(p) {
   <meta name="description" content="${esc(p.desc)}">
 ${p.keywords ? `  <meta name="keywords" content="${esc(p.keywords)}">\n` : ''}  <link rel="canonical" href="${url}">
   <meta name="robots" content="${p.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
-  <meta name="theme-color" content="${p.dark ? '#231f2c' : '#f3f6f4'}">
+  <meta name="theme-color" content="${p.dark ? '#18211c' : '#f3f6f4'}">
   <meta name="author" content="SODMUN">
   <meta name="geo.region" content="AE-DU">
   <meta name="geo.placename" content="Dubai">
@@ -371,8 +371,8 @@ write('site.webmanifest', JSON.stringify({
   description: ORG.description,
   start_url: '/',
   display: 'standalone',
-  background_color: '#231f2c',
-  theme_color: '#231f2c',
+  background_color: '#18211c',
+  theme_color: '#18211c',
   icons: [
     { src: '/assets/brand/icon-512.png', sizes: '512x512', type: 'image/png' },
     { src: '/assets/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },

@@ -4,8 +4,8 @@
   "description": "The largest private teen-led Model United Nations conference in the world, run by students in Dubai, United Arab Emirates.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#231f2c",
-  "theme_color": "#231f2c",
+  "background_color": "#18211c",
+  "theme_color": "#18211c",
   "icons": [
     {
       "src": "/assets/brand/icon-512.png",
