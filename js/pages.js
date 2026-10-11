@@ -6,6 +6,7 @@ import {
 const $ = (s, r = document) => r.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const page = document.body.dataset.page;
+const fill = (el, html) => { if (el && !el.firstElementChild) el.innerHTML = html; };
 
 /* ---------------- people ---------------- */
 const allPeople = SECRETARIAT.flatMap((g) => g.people);
@@ -39,20 +40,20 @@ function bindPeople(list) {
 /* ---------------- pages ---------------- */
 const pages = {
   about() {
-    $('#founders').innerHTML = SECRETARIAT[0].people.map(personCard).join('');
+    fill($('#founders'), SECRETARIAT[0].people.map(personCard).join(''));
     bindPeople(SECRETARIAT[0].people);
 
     // chapters: timeline + flip stack
     const tl = $('#timeline');
     const stack = $('#stack');
-    tl.innerHTML = EDITIONS.map((e, i) => `
+    fill(tl, EDITIONS.map((e, i) => `
       <li class="${i === 0 ? 'is-active' : ''}"><button data-i="${i}" aria-expanded="${i === 0}">
         <span class="timeline__n">${e.n}</span>
         <span class="timeline__t">${e.title}<span><span>${esc(e.text)}</span></span></span>
-      </button></li>`).join('');
-    stack.innerHTML = EDITIONS.map((e) => e.img
+      </button></li>`).join(''));
+    fill(stack, EDITIONS.map((e) => e.img
       ? `<div class="stack__card"><img src="${e.img}" alt="${e.title} poster" loading="lazy"></div>`
-      : `<div class="stack__card stack__card--blank"><div><i class="mark" aria-hidden="true"></i><div class="h3">${e.title}</div><p class="muted mt-s">Coming soon</p></div></div>`).join('');
+      : `<div class="stack__card stack__card--blank"><div><i class="mark" aria-hidden="true"></i><div class="h3">${e.title}</div><p class="muted mt-s">Coming soon</p></div></div>`).join(''));
     const cards = [...stack.children];
     let cur = 0;
     const layout = () => {
@@ -71,7 +72,7 @@ const pages = {
   },
 
   secretariat() {
-    $('#groups').innerHTML = SECRETARIAT.map((g, gi) => `
+    fill($('#groups'), SECRETARIAT.map((g, gi) => `
       <section class="group" aria-labelledby="g${gi}">
         <div class="group__head">
           <span class="label">${String(g.people.length).padStart(2, '0')} ${g.people.length === 1 ? 'member' : 'members'}</span>
@@ -79,24 +80,24 @@ const pages = {
           ${g.note ? `<p>${esc(g.note)}</p>` : ''}
         </div>
         <div class="group__grid">${g.people.map(personCard).join('')}</div>
-      </section>`).join('');
+      </section>`).join(''));
     bindPeople(allPeople);
   },
 
   committees() {
     const grid = $('#cgrid');
-    grid.innerHTML = COMMITTEES.map((c) => `
+    fill(grid, COMMITTEES.map((c) => `
       <div class="ccard ccard--static" data-type="${c.type}" data-q="${esc((c.abbr + ' ' + c.name + ' ' + c.alt).toLowerCase())}">
         <div class="ccard__top"><span>${COMMITTEE_TYPES[c.type]}</span></div>
         <div class="ccard__emblem" style="-webkit-mask-image:url('assets/committees/${c.id}.png');mask-image:url('assets/committees/${c.id}.png')" role="img" aria-label="${esc(c.name)} emblem"></div>
         <div><div class="ccard__abbr">${esc(c.abbr)}</div><div class="ccard__name">${esc(c.name)}</div></div>
-      </div>`).join('');
+      </div>`).join(''));
 
     const counts = { all: COMMITTEES.length };
     COMMITTEES.forEach((c) => { counts[c.type] = (counts[c.type] || 0) + 1; });
     const tabs = $('#tabs');
-    tabs.innerHTML = [['all', 'All'], ...Object.entries(COMMITTEE_TYPES)].map(([k, v], i) =>
-      `<button class="tab" data-f="${k}" aria-pressed="${i === 0}">${v} <small>${counts[k]}</small></button>`).join('');
+    fill(tabs, [['all', 'All'], ...Object.entries(COMMITTEE_TYPES)].map(([k, v], i) =>
+      `<button class="tab" data-f="${k}" aria-pressed="${i === 0}">${v} <small>${counts[k]}</small></button>`).join(''));
 
     let filter = new URLSearchParams(location.search).get('type') || 'all';
     let q = '';
@@ -182,24 +183,24 @@ const pages = {
   },
 
   partners() {
-    $('#plist').innerHTML = PARTNERS.map((p) => `
+    fill($('#plist'), PARTNERS.map((p) => `
       <a class="prow" href="${p.url}" target="_blank" rel="noopener" data-reveal>
         <span class="prow__tier">${esc(p.tier)}</span>
         <span class="prow__name"><span>${esc(p.name)}</span></span>
         <span class="prow__blurb">${esc(p.blurb)}</span>
         <span class="prow__go" aria-hidden="true">${ICON.out}</span>
-      </a>`).join('');
+      </a>`).join(''));
   },
 
   applications() {
-    $('#roles').innerHTML = APPLICATIONS.map((r, i) => `
+    fill($('#roles'), APPLICATIONS.map((r, i) => `
       <article class="role" data-reveal style="--d:${(i % 3) * 0.06}s">
         <div>
           <div class="role__top"><span class="label">${esc(r.kicker)}</span><span class="role__status"><i></i>Opening soon</span></div>
           <h3>${esc(r.title)}</h3>
           <p>${esc(r.text)}</p>
         </div>
-      </article>`).join('');
+      </article>`).join(''));
   },
 
 };

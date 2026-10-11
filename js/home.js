@@ -5,19 +5,20 @@ import createGlobe from './vendor/cobe.js';
 const $ = (s, r = document) => r.querySelector(s);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------- stats ---------- */
-$('#stats').innerHTML = STATS.map((s, i) => `
+/* ---------- stats & quotes (pre-rendered by tools/build.js) ---------- */
+const fill = (el, html) => { if (el && !el.firstElementChild) el.innerHTML = html; };
+
+fill($('#stats'), STATS.map((s, i) => `
   <div class="stat" data-reveal style="--d:${i * 0.08}s">
     <div class="stat__v" data-count="${s.value}"><span data-count-num>0</span>${s.suffix.trim() === '+' ? '<span class="plus">+</span>' : s.suffix ? `<span class="unit">${s.suffix.trim()}</span>` : ''}</div>
     <div class="stat__l">${s.label}</div>
-  </div>`).join('');
+  </div>`).join(''));
 
-/* ---------- testimonials ---------- */
-$('#quotes').innerHTML = TESTIMONIALS.map((t, i) => `
+fill($('#quotes'), TESTIMONIALS.map((t, i) => `
   <figure class="quote" data-reveal style="--d:${i * 0.12}s">
     <blockquote>${t.quote}</blockquote>
     <figcaption><strong style="font-weight:500">${t.name}</strong><span>${t.role}</span></figcaption>
-  </figure>`).join('');
+  </figure>`).join(''));
 
 /* ---------- Ask AI ---------- */
 const AIS = [

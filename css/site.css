@@ -754,7 +754,7 @@ em, i { font-style: italic; }
 .role__status.is-open { color: var(--ink); }
 .role__status.is-open i { background: var(--green); border-color: var(--green); animation: blink 2s infinite; }
 @keyframes blink { 50% { opacity: .3; } }
-.role h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.012em; line-height: 1.15; margin-top: 18px; }
+.role h2, .role h3 { font-size: clamp(24px, 2.2vw, 30px); letter-spacing: -0.012em; line-height: 1.15; margin-top: 18px; }
 .role p { font-size: 16.5px; color: var(--ink-3); margin-top: 14px; }
 .role .btn { width: 100%; justify-content: space-between; }
 @media (max-width: 1000px) { .roles { grid-template-columns: 1fr 1fr; } }
@@ -800,3 +800,29 @@ em, i { font-style: italic; }
 .center { text-align: center; }
 .nowrap { white-space: nowrap; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ==================================================================
+   FAQ
+================================================================== */
+.faq { border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding: 24px 0; font-size: clamp(20px, 1.9vw, 25px); letter-spacing: -0.012em; line-height: 1.3;
+  transition: color .3s var(--ease);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:hover { color: var(--green); }
+.faq__item summary i { position: relative; width: 14px; height: 14px; flex: none; }
+.faq__item summary i::before, .faq__item summary i::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: currentColor; transition: transform .4s var(--ease-out);
+}
+.faq__item summary i::after { transform: rotate(90deg); }
+.faq__item[open] summary i::after { transform: rotate(0); }
+.faq__item[open] summary { color: var(--purple); }
+.faq__item p { padding: 0 0 26px; max-width: 72ch; font-size: 17px; line-height: 1.6; color: var(--ink-3); }
+
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.plain li { font-size: 16.5px; line-height: 1.55; color: var(--ink-3); padding-left: 20px; position: relative; }
+.plain li::before { content: ''; position: absolute; left: 0; top: .62em; width: 7px; height: 1px; background: var(--green); }
+.plain strong { font-weight: 500; color: var(--ink); }
