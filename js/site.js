@@ -32,7 +32,7 @@ function renderShell() {
       </nav>
       <div class="nav__cta">
         <a class="btn btn--ghost" href="${SITE.platform}" target="_blank" rel="noopener">Platform</a>
-        <a class="btn" href="applications.html"${current('applications.html')}>Apply</a>
+        <a class="btn" href="applications.html"${current('applications.html')}>Applications</a>
         <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span></button>
       </div>
     </div>`;
@@ -48,7 +48,7 @@ function renderShell() {
     </nav>
     <div class="drawer__foot">
       <div class="btn-row">
-        <a class="btn" href="applications.html">Apply ${ICON.arrow}</a>
+        <a class="btn" href="applications.html">Applications ${ICON.arrow}</a>
         <a class="btn btn--ghost" href="${SITE.platform}" target="_blank" rel="noopener">Platform</a>
       </div>
       <div>${SITE.email} · ${SITE.phone}</div>
@@ -100,7 +100,6 @@ function renderShell() {
             <li><a href="about.html">About</a></li>
             <li><a href="secretariat.html">Secretariat</a></li>
             <li><a href="committees.html">Committees</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
           </ul>
         </div>
         <div>

@@ -86,12 +86,11 @@ const pages = {
   committees() {
     const grid = $('#cgrid');
     grid.innerHTML = COMMITTEES.map((c) => `
-      <a class="ccard" href="committee.html?c=${c.id}" data-type="${c.type}" data-q="${esc((c.abbr + ' ' + c.name + ' ' + c.alt).toLowerCase())}">
+      <div class="ccard ccard--static" data-type="${c.type}" data-q="${esc((c.abbr + ' ' + c.name + ' ' + c.alt).toLowerCase())}">
         <div class="ccard__top"><span>${COMMITTEE_TYPES[c.type]}</span></div>
         <div class="ccard__emblem" style="-webkit-mask-image:url('assets/committees/${c.id}.png');mask-image:url('assets/committees/${c.id}.png')" role="img" aria-label="${esc(c.name)} emblem"></div>
         <div><div class="ccard__abbr">${esc(c.abbr)}</div><div class="ccard__name">${esc(c.name)}</div></div>
-        <span class="ccard__go" aria-hidden="true">${ICON.arrow}</span>
-      </a>`).join('');
+      </div>`).join('');
 
     const counts = { all: COMMITTEES.length };
     COMMITTEES.forEach((c) => { counts[c.type] = (counts[c.type] || 0) + 1; });
@@ -155,7 +154,7 @@ const pages = {
         <p class="note">${isCrisis ? '' : 'Agendas shown are from SODMUN IV. SODMUN V agendas are released with the background guides.'}</p>
         <div class="btn-row mt-m">
           <a class="btn" href="${SITE.backgroundGuides}" target="_blank" rel="noopener">Background guides ${ICON.out}</a>
-          <a class="btn btn--ghost" href="applications.html">Apply as a delegate</a>
+          <a class="btn btn--ghost" href="applications.html">Applications</a>
         </div>
       </div>`;
 
@@ -193,33 +192,16 @@ const pages = {
   },
 
   applications() {
-    $('#roles').innerHTML = APPLICATIONS.map((r, i) => {
-      const open = !!r.url;
-      const mail = `mailto:${SITE.email}?subject=${encodeURIComponent(`SODMUN V · ${r.title} applications`)}&body=${encodeURIComponent(`Hi SODMUN team,\n\nPlease let me know when ${r.title} applications for SODMUN V open.\n\nName:\nSchool:\nGrade:\n`)}`;
-      return `
+    $('#roles').innerHTML = APPLICATIONS.map((r, i) => `
       <article class="role" data-reveal style="--d:${(i % 3) * 0.06}s">
         <div>
-          <div class="role__top"><span class="label">${esc(r.kicker)}</span><span class="role__status${open ? ' is-open' : ''}"><i></i>${open ? 'Open' : 'Opening soon'}</span></div>
+          <div class="role__top"><span class="label">${esc(r.kicker)}</span><span class="role__status"><i></i>Opening soon</span></div>
           <h3>${esc(r.title)}</h3>
           <p>${esc(r.text)}</p>
         </div>
-        ${open
-          ? `<a class="btn" href="${r.url}" target="_blank" rel="noopener">Apply ${ICON.out}</a>`
-          : `<a class="btn btn--ghost" href="${mail}">Notify me ${ICON.arrow}</a>`}
-      </article>`;
-    }).join('');
+      </article>`).join('');
   },
 
-  contact() {
-    const form = $('#contact-form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const d = new FormData(form);
-      const subject = `[${d.get('topic')}] ${d.get('name')}`;
-      const body = `${d.get('message')}\n\n— ${d.get('name')}${d.get('school') ? `, ${d.get('school')}` : ''}`;
-      location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  },
 };
 
 pages[page] && pages[page]();
